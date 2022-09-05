@@ -7,10 +7,11 @@ createGallery();
 gallery.addEventListener("click", (event) => {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") return;
-  let gallery = new SimpleLightbox(".gallery a");
-  gallery.on("show.simplelightbox", function () {
-    // do something…
+  new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    captionDelay: 250,
   });
+  console.log("open");
 });
 
 function createGallery() {
@@ -25,4 +26,3 @@ function createGallery() {
 
   gallery.insertAdjacentHTML("beforeend", markup);
 }
-console.log(galleryItems);
