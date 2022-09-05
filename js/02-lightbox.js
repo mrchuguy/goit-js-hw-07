@@ -6,12 +6,11 @@ createGallery();
 
 gallery.addEventListener("click", (event) => {
   event.preventDefault();
-  if (event.target.nodeName !== "IMG") return;
-  new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-  console.log("open");
+});
+
+new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
 });
 
 function createGallery() {
